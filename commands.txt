@@ -1,0 +1,4 @@
+dotnet new sln = Create the solution file (in the directory you're inside)
+mkdir (API/Service/Infra) = Create the empty directories
+dotnet new (web/classlib) = Creates new project of certain type in the directory you're inside
+dotnet sln add (folder/directory) = Adds project (inside folder) to the solution in the current working directory
