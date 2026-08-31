@@ -1,11 +1,22 @@
-﻿namespace Infa;
+﻿using LinqToDB;
+using LinqToDB.Data;
+using LinqToDB.Mapping;
 
-public class MyFakeDatabase
+namespace Infa;
+
+public class GroceryDatabase(DataOptions<GroceryDatabase> dataopts) : DataConnection(dataopts.Options)
 {
-    public MyFakeDatabase()
+
+    public ITable<GroceryItem> Groceries()
     {
-        Console.WriteLine("Database has been created");
+        return this.GetTable<GroceryItem>();
     }
     
-    public List<object> MyObjects = new List<object>();
+}
+
+public class GroceryItem
+{
+    [PrimaryKey]public string Id { get; set; }
+    public string GroceryName { get; set; }
+    
 }
