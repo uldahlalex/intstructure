@@ -1,6 +1,11 @@
 ﻿namespace Infa;
 
-public class Class2
+public class MyFakeDatabase
 {
-
+    public MyFakeDatabase()
+    {
+        Console.WriteLine("Database has been created");
+    }
+    
+    public List<object> MyObjects = new List<object>();
 }
